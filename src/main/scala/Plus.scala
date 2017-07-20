@@ -1,16 +1,15 @@
 import scala.io.StdIn
 import scala.util.Random
 
-object Math {
+object Plus {
   def main(args: Array[String]) {
     run()
   }
 
-  def minus(randomNumber1: Int, randomNumber2: Int): Unit ={
-    if(randomNumber1 > randomNumber2) println(s"$randomNumber1 - $randomNumber2 = ")
-    else println(s"$randomNumber2 - $randomNumber1 = ")
+  def plus(randomNumber1: Int, randomNumber2: Int): Unit ={
+    println(s"$randomNumber1 + $randomNumber2 = ")
 
-    def minus1(answer: Int, number: Int = -1, count: Int = 0): Unit ={
+    def plus1(answer: Int, number: Int = -1, count: Int = 0): Unit ={
       try{
         number match {
           case -1 =>
@@ -18,15 +17,15 @@ object Math {
           case _ => println("Wrong answer. Try again.")
         }
         val g = StdIn.readInt
-        minus1(answer, g, count + 1)
+        plus1(answer, g, count + 1)
       }catch {
         case e: NumberFormatException => {
           println("Invalid input. Try again.")
-          minus1(answer, number, count)}
+          plus1(answer, number, count)}
       }
     }
 
-    minus1((randomNumber1 - randomNumber2).abs)
+    plus1(randomNumber1 + randomNumber2)
 
   }
 
@@ -48,10 +47,10 @@ object Math {
   def run(play: Boolean = true): Unit ={
     if(play){
       println("\nWelcome to")
-      println("     *** Minus the number! ***")
-      println("Minus the number below 100, what is the answer")
+      println("     *** Plus the number! ***")
+      println("Plus the number below 200, what is the answer")
       val random = new Random
-      minus(random.nextInt(100) + 1, random.nextInt(100) + 1)
+      plus(random.nextInt(100) + 1, random.nextInt(100) + 1)
       run(playAgain)
     }
   }
