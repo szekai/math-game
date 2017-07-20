@@ -13,7 +13,7 @@ object Plus {
       try{
         number match {
           case -1 =>
-          case x if x == answer => println("Congratulations! You only needed " + count + " tries to guess my number!"); return
+          case x if x == answer => println("Congratulations! You only needed " + count + " tries to answer!"); return
           case _ => println("Wrong answer. Try again.")
         }
         val g = StdIn.readInt
