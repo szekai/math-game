@@ -18,6 +18,7 @@ object Math {
           case _ => println("Wrong answer. Try again.")
         }
         val g = StdIn.readInt
+        println(g)
         minus1(answer, g, count + 1)
       }catch {
         case e: NumberFormatException => {
@@ -33,6 +34,7 @@ object Math {
   def playAgain(): Boolean ={
     println("Would you like to play again? (yes or no)")
     val response = StdIn.readLine.toLowerCase
+    println(response)
     def playAgain1(response: String): Boolean ={
       response match {
         case "yes" | "y" => true
